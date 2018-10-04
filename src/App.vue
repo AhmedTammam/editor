@@ -18,10 +18,10 @@ export default {
     text: 'text'
   }),
   methods: {
-         processEditOperation: function (operation) {
-          this.text = operation.api.origElements.innerHTML
-        }
-      }
+    processEditOperation: function (operation) {
+      this.text = operation.api.origElements.innerHTML
+    }
+  }
 }
 </script>
 
