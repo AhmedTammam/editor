@@ -1,28 +1,29 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <div>
+  <medium-editor :text='text' v-on:edit='processEditOperation' custom-tag='div'>
+</medium-editor>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import editor from 'vue2-medium-editor'
+
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
-  }
+    'medium-editor': editor
+  },
+  data: () => ({
+    text: 'text'
+  }),
+  methods: {
+         processEditOperation: function (operation) {
+          this.text = operation.api.origElements.innerHTML
+        }
+      }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
