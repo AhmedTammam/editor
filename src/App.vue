@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <medium-editor :text='text' :options="options" :toolbar="toolbar" v-on:edit='processEditOperation' custom-tag='textarea'>
+        <medium-editor :text='text' :options="options" v-on:edit='processEditOperation' custom-tag='textarea'>
 </medium-editor>
       </div>
 </div>
@@ -34,24 +34,18 @@ export default {
     extensions: {},
     ownerDocument: document,
     spellcheck: true,
-    targetBlank: false
-    },
+    targetBlank: false,
     toolbar: {
         /* These are the default options for the toolbar,
            if nothing is passed this is what is used */
-        buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3'],
-        diffLeft: 0,
-        diffTop: -10,
-        firstButtonClass: 'medium-editor-button-first',
-        lastButtonClass: 'medium-editor-button-last',
-        relativeContainer: null,
-        standardizeSelectionStart: false,
-        static: true,
+        buttons: ['bold', 'italic', 'underline', 'anchor', 'h2', 'h3', 'justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull'],
+        static: false,
 
         /* options which only apply when static is true */
         align: 'center',
         sticky: false,
         updateOnEmptySelection: false
+    }
     }
   }),
   methods: {
