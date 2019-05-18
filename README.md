@@ -1,5 +1,7 @@
 # editor-app
 
+like medium editor in vue js
+
 ## Project setup
 ```
 yarn install
